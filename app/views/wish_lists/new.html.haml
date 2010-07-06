@@ -1,0 +1,14 @@
+%h1 Upload a Wish List
+- flash.each do |level, msg|
+  = content_tag(:div, msg, :class => "flash #{level}")
+- form_for @wish_list, :html => { :multipart => true } do |f|
+  %p
+    = f.label :title
+    = f.text_field :title
+  %p
+    = f.label :file, "Wish List File"
+    = f.file_field :file
+  %p
+    = f.submit 'Upload'
+    or
+    = link_to('view all wish lists', wish_lists_path)
