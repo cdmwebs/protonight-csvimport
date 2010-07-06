@@ -1,0 +1,8 @@
+%h1 Wish Lists
+
+%p
+  = link_to('Upload a Wish List', new_wish_list_path)
+
+%ul
+  - @wish_lists.each do |wish_list|
+    %li= link_to("#{wish_list.title} (#{pluralize(wish_list.wishes.size, 'wish')})", wish_list)

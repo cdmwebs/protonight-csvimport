@@ -1,0 +1,31 @@
+%h1= @wish_list.title
+
+%p
+  = link_to('Back to Wish Lists', wish_lists_path)
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Age
+      %th Sex
+      %th Gift 1
+      %th Delivered On
+      %th Thank You To
+      %th Gift 2
+      %th Delivered On
+      %th Thank You To
+      %th Notes
+  %tbody
+    - @wish_list.wishes.each do |wish|
+      %tr
+        %td= wish.name
+        %td= wish.age
+        %td= wish.sex
+        %td= wish.gift_1
+        %td= wish.gift_1_delivered_on
+        %td= wish.gift_1_thank_you_to
+        %td= wish.gift_2
+        %td= wish.gift_2_delivered_on
+        %td= wish.gift_2_thank_you_to
+        %td= wish.notes

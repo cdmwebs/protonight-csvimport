@@ -1,3 +1,3 @@
 class Wish < ActiveRecord::Base
-  belongs_to :donor_organization
+  belongs_to :wish_list
 end
