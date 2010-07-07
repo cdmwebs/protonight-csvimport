@@ -5,6 +5,8 @@ class CreateDonorOrganizationAndDonors < ActiveRecord::Migration
     end
     create_table :donors do |t|
       t.string :name
+      t.boolean :admin, :default => false
+      t.integer :donor_organization_id
     end    
   end
 
